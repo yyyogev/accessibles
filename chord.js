@@ -3,6 +3,7 @@ exports.__esModule = true;
 exports.Inversion = void 0;
 var reactPiano = require('react-piano');
 var MidiNumbers = reactPiano.MidiNumbers;
+var notes_1 = require("./notes");
 var Inversion;
 (function (Inversion) {
     Inversion[Inversion["Natural"] = 0] = "Natural";
@@ -53,7 +54,6 @@ function getChord(root, chordType, inversion) {
             chord[i] = chord[i] - inversionRoot + root;
         }
     }
-    var attr = MidiNumbers.getAttributes(root);
     var inversionStr = '';
     switch (inversion) {
         case 1:
@@ -66,7 +66,7 @@ function getChord(root, chordType, inversion) {
             inversionStr = '';
     }
     return {
-        name: "".concat(attr.note).concat(chordType.toString()).concat(inversionStr),
+        name: "".concat(notes_1["default"].midiToNote(root)).concat(chordType.toString()).concat(inversionStr),
         root: root,
         octave: 1,
         inversion: inversion,
