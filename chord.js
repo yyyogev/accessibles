@@ -66,7 +66,7 @@ function getChord(root, chordType, inversion) {
             inversionStr = '';
     }
     return {
-        name: "".concat(notes_1["default"].midiToNote(root)).concat(chordType.toString()).concat(inversionStr),
+        name: "".concat(notes_1.midiToNote(root)).concat(chordType.toString()).concat(inversionStr),
         root: root,
         octave: 1,
         inversion: inversion,
